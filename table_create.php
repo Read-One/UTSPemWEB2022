@@ -8,19 +8,61 @@ if ($conn->connect_error) {
     die("Connection Failed: ". $conn->connect_error);
 }
 
-$sql = "CREATE TABLE Mahasiswa (
-    nim INT (6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+$sqlid = "CREATE TABLE mahasiswa (
+    nim INT (6) NOT NULL PRIMARY KEY,
     nama VARCHAR (30) NOT NULL,
     prodi VARCHAR (30) NOT NULL,
     gender ENUM ('L','P'),
-    email VARCHAR (50),
-    foto BLOB NOT NULL
+    foto BLOB NOT NULL,
+    tempatlhr VARCHAR (10),
+    tgllhr DATE,
+    stat VARCHAR (12),
+    agama VARCHAR (10),
+    skill VARCHAR (40),
+    quote VARCHAR (40)
 )";
 
-if ($conn->query($sql)===TRUE){
-    echo "Table Contact create sucessfully";
+$sqlcp = "CREATE TABLE contact (
+    email VARCHAR (50) NOT NULL PRIMARY KEY,    
+    alamat VARCHAR (40),
+    telephone BIGINT (13),
+    nim INT(6) NOT NULL,
+    FOREIGN KEY (nim) REFERENCES mahasiswa(nim)
+)";
+
+$sqlsch = "CREATE TABLE sekolah (
+    namasekolah VARCHAR (30) NOT NULL PRIMARY KEY,
+    tahunlulus YEAR,
+    jurusan VARCHAR (20),
+    nim INT(6) NOT NULL,
+    keterangan VARCHAR (10),
+    FOREIGN KEY (nim) REFERENCES mahasiswa(nim)
+)";
+
+$sqljob = "CREATE TABLE job (
+    tempatkerja VARCHAR (30) NOT NULL PRIMARY KEY,
+    tahunmasuk YEAR,
+    tahunkeluar YEAR,
+    jabatan VARCHAR (20),
+    nim INT(6) NOT NULL,
+    deskripsi  VARCHAR (30),
+    FOREIGN KEY (nim) REFERENCES mahasiswa(nim)
+)";
+
+$sqlorg = "CREATE TABLE org (
+    namaorg VARCHAR (30) NOT NULL PRIMARY KEY,
+    tahunmasuk YEAR,
+    tahunkeluar YEAR,
+    jabatan VARCHAR (20),
+    nim INT(6) NOT NULL,
+    deskripsi  VARCHAR (30),
+    FOREIGN KEY (nim) REFERENCES mahasiswa(nim)
+)";
+
+if ($conn->query($sqlorg)===TRUE){
+    echo "Table  create sucessfully";
 }else {
-    echo "Error creating table".$conn->error;
+    echo "Error creating table ".$conn->error;
 }
 $conn->close();
 echo "<br /> NIM = 201110190 <br />"; 
