@@ -37,6 +37,24 @@ VALUES ('Karang Taruna Karya Muda','2019','-','Divisi UKS','201110190','Aktif')"
 $sqlorg3 = "INSERT INTO `org`(`namaorg`, `tahunmasuk`, `tahunkeluar`, `jabatan`, `nim`, `deskripsi`) 
 VALUES ('Karang Taruna Desa Sukoharjo','2018','-','Divisi Humas','201110190','Aktif')";
 
+if ($conn->query($sqlorg2)===true){
+    echo "New Record created succesfully";
+}else{
+    echo "ERROR".$sqlid."<br/>".$conn->error;
+}
+
+if ($conn->query($sqlorg1)===true){
+    echo "New Record created succesfully";
+}else{
+    echo "ERROR".$sqlid."<br/>".$conn->error;
+}
+
+if ($conn->query($sqlorg2)===true){
+    echo "New Record created succesfully";
+}else{
+    echo "ERROR".$sqlid."<br/>".$conn->error;
+}
+
 if ($conn->query($sqlorg3)===true){
     echo "New Record created succesfully";
 }else{

@@ -46,7 +46,7 @@
     if ($result->num_rows > 0) {
         while ($row = mysqli_fetch_array($result)) {
             echo "
-        <div class='utama' style='height: 450px'>
+        <div class='utama' style='height: 430px'>
         <div class='kiri'>
             <hr class='tebal'>
             <h3>Personal Info</h3>
@@ -77,7 +77,7 @@
     }
     ?>
 
-    <div class='utama' style="height: 400px";>
+    <div class='utama' style="height: 360px";>
         <?php
         include "db_koneksidb.php";
         $sql3 = "SELECT * FROM mahasiswa JOIN org ON mahasiswa.nim=org.nim";
@@ -101,7 +101,7 @@
         ?>
     </div>
 
-    <div class='utama' style="height: 400px";>
+    <div class='utama' style="height: 360px";>
         <?php
         include "db_koneksidb.php";
         $sql4 = "SELECT * FROM mahasiswa JOIN sekolah ON mahasiswa.nim=sekolah.nim ORDER BY `sekolah`.`tahunlulus` ASC";
@@ -124,6 +124,29 @@
         }
         ?>
     </div>
-</body>
 
+    <div class='utama' style="height: 360px";>
+        <?php
+        include "db_koneksidb.php";
+        $sql5 = "SELECT * FROM mahasiswa JOIN job ON mahasiswa.nim=job.nim ORDER BY `job`.`tahunmasuk` ASC ";
+
+        $result = $conn->query($sql5);
+
+        if ($result->num_rows > 0) {
+            while ($row = mysqli_fetch_array($result)) {
+                echo "
+            <div class='job'>
+            <hr class='tebal'>            
+            <h3>WORK EXPERIENCE</h3>
+            <h6>Nama Perusahaan : " . $row['tempatkerja'] . "</h6>
+            <h6>Jabatan : ".$row['jabatan']."</h6>
+            <h6>Masa Kerja  : ".$row['tahunmasuk']." - ".$row['tahunkeluar']."</h6>
+            <h6>Status : ".$row['deskripsi']."</h6>
+            </div>
+        ";
+            }
+        }
+        ?>
+    </div>
+</body>
 </html>

@@ -1,38 +1,70 @@
 body {
-    background-image: url("bg.jpg");
-    font-family: sans-serif;
-    font-size: 22px;
-    color: rgb(0, 0, 0);
+  background-image: url("bg.jpg");
+  font-family: sans-serif;
+  font-size: 22px;
+  color: rgb(0, 0, 0);
 }
-  hr.tebal {
-    border: 10px solid black;
-    border-radius: 5px;
+
+hr.tebal {
+  border: 10px solid black;
+  border-radius: 5px;
 }
 
 div.utama {
-    width: 1600px; margin : 0 auto;
+  width: 1600px;
+  margin: 0 auto;
 }
 
-div.gambar{
-    width: 200px; height: 260px; float: left; background: rgb(46, 5, 194, 0.5) ; padding : 10px
+div.gambar {
+  width: 200px;
+  height: 260px;
+  float: left;
+  background: rgb(46, 5, 194, 0.5);
+  padding: 10px;
 }
 
-div.palet{
-    margin-left: 290px; height: 260px; background: rgba(62, 34, 221, 0.5);  padding : 10px
+div.palet {
+  margin-left: 290px;
+  height: 260px;
+  background: rgba(62, 34, 221, 0.5);
+  padding: 10px;
 }
 
-div.kiri{
-    width: 45%; height: 400px; float: left; background: rgba(6, 109, 23, 0.5) ; padding : 10px
+div.kiri {
+  width: 45%;
+  height: 400px;
+  float: left;
+  background: rgba(6, 109, 23, 0.5);
+  padding: 10px;
 }
 
-div.kanan{
-    margin-left: 50%; height: 400px; ;background: rgba(159, 199, 14, 0.5) ; padding : 10px
+div.kanan {
+  margin-left: 50%;
+  height: 400px;
+  background: rgba(159, 199, 14, 0.5);
+  padding: 10px;
 }
 
-div.org{
-    width: 32%; height: 350px; float: left; background: rgba(231, 43, 43, 0.5) ; padding : 10px
+div.org {
+  width: 32%;
+  height: 330px;
+  float: left;
+  background: rgba(231, 43, 43, 0.5);
+  padding: 10px;
 }
 
-div.sch{
-    width: 32%; height: 350px; float: left; background: rgba(43, 148, 209, 0.5) ; padding : 10px
+div.sch {
+  width: 32%;
+  height: 330px;
+  float: left;
+  background: rgba(43, 148, 209, 0.5);
+  padding: 10px;
+}
+
+div.job {
+  width: 48.5%;
+  height: 330px;
+  float: left;
+  background: rgba(209, 123, 43, 0.5);
+  padding: 10px;
 }

@@ -59,11 +59,36 @@ $sqlorg = "CREATE TABLE org (
     FOREIGN KEY (nim) REFERENCES mahasiswa(nim)
 )";
 
-if ($conn->query($sqlorg)===TRUE){
-    echo "Table  create sucessfully";
+if ($conn->query($sqlid)===TRUE){
+    echo "Table ID create sucessfully";
 }else {
     echo "Error creating table ".$conn->error;
 }
+
+if ($conn->query($sqlcp)===TRUE){
+    echo "Table CP create sucessfully";
+}else {
+    echo "Error creating table ".$conn->error;
+}
+
+if ($conn->query($sqlsch)===TRUE){
+    echo "Table SCH create sucessfully";
+}else {
+    echo "Error creating table ".$conn->error;
+}
+
+if ($conn->query($sqljob)===TRUE){
+    echo "Table JOB create sucessfully";
+}else {
+    echo "Error creating table ".$conn->error;
+}
+
+if ($conn->query($sqlorg)===TRUE){
+    echo "Table ORG create sucessfully";
+}else {
+    echo "Error creating table ".$conn->error;
+}
+
 $conn->close();
 echo "<br /> NIM = 201110190 <br />"; 
 echo "Nama = MUHAMAD RIDWAN <br />";
